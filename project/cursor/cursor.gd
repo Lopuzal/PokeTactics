@@ -55,6 +55,7 @@ func _set_tile(coords: Vector2) -> void:
 	# Handles the conversation from world pixel position to TileMap Cartesian coordinates.
 	if not Map.is_within_bounds(coords):
 		# Ensure the cursor tile stays on the map.
+		print(coords)
 		tile = Map.clamp(coords)
 		_set_hovered_cell(Map.get_cell_at(tile))
 	else:

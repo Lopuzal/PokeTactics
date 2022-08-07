@@ -25,14 +25,14 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _init(_base_attack, _base_defense, _base_spe_attack, _base_spe_defense, _base_hp, _base_speed, types):
+func _init(_base_attack, _base_defense, _base_spe_attack, _base_spe_defense, _base_hp, _base_speed, _types):
 	set_base_attack(_base_attack)
 	set_base_defense(_base_defense)
 	set_base_spe_attack(_base_spe_attack)
 	set_base_spe_defense(_base_spe_defense)
 	set_base_hp(_base_hp)
 	set_base_speed(_base_speed)
-	set_types(types)
+	set_types(_types)
 	""" Setget Functions """
 	
 func set_hidden_attack(_hidden_attack) -> void:

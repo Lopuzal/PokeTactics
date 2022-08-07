@@ -40,6 +40,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Map="*res://project/auto_load/map.gd"
+TypesInfo="*res://project/auto_load/types_info.gd"
 
 [display]
 

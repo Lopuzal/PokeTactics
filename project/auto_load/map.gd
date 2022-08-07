@@ -4,7 +4,7 @@ extends Node
 # It's meant to be shared between game objects that need access to those values.
 
 # Define the tile size and offset (center) position of our tiles.
-const TILE_SIZE := Vector2(64, 64)
+const TILE_SIZE := Vector2(16, 16)
 const OFFSET := TILE_SIZE/2
 
 # Directions of cardinal tiles, clickwise from midnight
@@ -75,6 +75,8 @@ func is_within_bounds(coords: Vector2) -> bool:
 func clamp(grid_position: Vector2) -> Vector2:
 	# Forces the grid_position to stay within the grid's bounds.
 	var out := grid_position
+	print(size.x)
+	print(size.y)
 	out.x = clamp(out.x, 0, size.x - 1.0)
 	out.y = clamp(out.y, 0, size.y - 1.0)
 	return out

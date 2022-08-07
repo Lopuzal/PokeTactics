@@ -11,7 +11,7 @@ extends TileMap
 # TileGrid is used to formualte information from a TileMap, then send it to the Map Singleton.
 
 # Define the tile size and offset (center) position of our tiles.
-const TILE_SIZE = Vector2(64, 64)
+const TILE_SIZE = Vector2(16, 16)
 const OFFSET = TILE_SIZE/2
 
 # Directions of cardinal tiles, clickwise from midnight
@@ -25,6 +25,8 @@ const CARDINAL = [DIR_N, DIR_E, DIR_S, DIR_W]
 # Allows easy retrieval of TileCells.
 # {Vector2: TileCell}
 var _grid: Dictionary setget _set_grid, _get_grid # Holds all TileCell data
+var _terrain_indexes: Dictionary setget _set_terrain_indexes, _get_terrain_indexes
+
 
 # Properties used to ensure only valid locations are used to create the grid and cells.
 # Many of these are likely unneeded, but I'm a fan of forward preparedness.
@@ -34,12 +36,13 @@ onready var _origin_y: int = _bounds.position.y
 onready var _width: int = _bounds.end.x
 onready var _height: int = _bounds.end.y
 onready var _origins := Vector2(_origin_x, _origin_y)
-onready var _size := Vector2(_height, _width)
+onready var _size := Vector2(_width, _height)
 onready var _all_tiles: Array = get_used_cells()
 
 
 func _ready():
 	print("TileGrid ready.")
+	print(get_used_rect())
 
 
 """ Setget functions """
@@ -52,7 +55,12 @@ func _set_grid(dict: Dictionary) -> void:
 func _get_grid() -> Dictionary:
 	return _grid
 
-
+func _set_terrain_indexes(terrain_indexes: Dictionary) -> void:
+	_terrain_indexes = terrain_indexes
+	
+func _get_terrain_indexes() -> Dictionary:
+	return _terrain_indexes
+	
 """ Public functions. """
 
 

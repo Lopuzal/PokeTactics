@@ -7,13 +7,17 @@ onready var current_phase = phases.PLACE_UNIT
 onready var current_turn = player_turn.PLAYER1
 
 # Declare our instanced child scenes.
-onready var battlemap := $Battlemap
+onready var battlemap_scene := load("res://project/battlemap/battlemap.tscn")
+onready var battlemap = battlemap_scene.instance()
 onready var cursor := $Cursor
 
 
+
+
 func _ready():
+	add_child(battlemap)
 	print("Main ready.")
-	
+	print(TypesInfo.determine_type_efficiency(TypesInfo.types.GROUND, [TypesInfo.types.ELEC,TypesInfo.types.ROCK]))
 
 
 

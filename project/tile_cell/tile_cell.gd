@@ -7,7 +7,7 @@ extends Resource
 # Then filled with scene-specific information.
 
 # The strict size and offset (center) position of the TileCells.
-const CELL_SIZE := Vector2(64, 64)
+const CELL_SIZE := Vector2(16, 16)
 const OFFSET := CELL_SIZE/2
 
 # Directions of cardinal tiles, clickwise from midnight
