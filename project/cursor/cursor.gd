@@ -22,9 +22,10 @@ var _selected_cell: TileCell
 var _previous_cell: TileCell
 
 signal selected_cell(coords, cell)
+signal hovered_cell(coords, cell)
 
 onready var _timer: Timer = $Timer
-
+onready var camera = get_node("../Camera")
 
 func _ready():
 	position = Map.map_position(tile)
@@ -37,7 +38,7 @@ func _unhandled_input(event: InputEvent):
 
 	# Connecting tile coordinates to mouse position.
 	if event is InputEventMouseMotion:
-		self.tile = Map.grid_coordinates(event.position)
+		self.tile = Map.grid_coordinates(event.position*camera.zoom+camera.position)
 
 	if Input.is_action_just_pressed("ui_accept"):
 		_handle_selection()
@@ -76,6 +77,7 @@ func _set_hovered_cell(cell: TileCell) -> void:
 	# This should avoid UI elements being constantly re-drawn later.
 	if _hovered_cell != cell:
 		_hovered_cell = cell
+		emit_signal("hovered_cell",Map.map_position(_hovered_cell.get_coordinates()),_hovered_cell)
 
 
 func _handle_selection() -> void:

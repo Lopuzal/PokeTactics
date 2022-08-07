@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lilycove.png-69fc4a327ee053168b38d3e85ab84910.stex"
+path="res://.import/hovered.png-fb2a04336dec1f1e13d936cec2684c48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://project/battlemap/tile_sets/lilycove.png"
-dest_files=[ "res://.import/lilycove.png-69fc4a327ee053168b38d3e85ab84910.stex" ]
+source_file="res://project/overlay/tile_sets/hovered.png"
+dest_files=[ "res://.import/hovered.png-fb2a04336dec1f1e13d936cec2684c48.stex" ]
 
 [params]
 

@@ -75,8 +75,6 @@ func is_within_bounds(coords: Vector2) -> bool:
 func clamp(grid_position: Vector2) -> Vector2:
 	# Forces the grid_position to stay within the grid's bounds.
 	var out := grid_position
-	print(size.x)
-	print(size.y)
 	out.x = clamp(out.x, 0, size.x - 1.0)
 	out.y = clamp(out.y, 0, size.y - 1.0)
 	return out
