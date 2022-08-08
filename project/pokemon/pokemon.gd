@@ -9,30 +9,31 @@ var hidden_spe_defense : int setget set_hidden_spe_defense, get_hidden_spe_defen
 var hidden_hp : int setget set_hidden_hp, get_hidden_hp
 var hidden_speed : int setget set_hidden_speed, get_hidden_speed
 
-var base_attack : int setget set_base_attack, get_base_attack
-var base_defense : int setget set_base_defense, get_base_defense
-var base_spe_attack : int setget set_base_spe_attack, get_base_spe_attack
-var base_spe_defense : int setget set_base_spe_defense, get_base_spe_defense
-var base_hp : int setget set_base_hp, get_base_hp
-var base_speed : int setget set_base_speed, get_base_speed
+export var base_attack : int setget set_base_attack, get_base_attack
+export var base_defense : int setget set_base_defense, get_base_defense
+export var base_spe_attack : int setget set_base_spe_attack, get_base_spe_attack
+export var base_spe_defense : int setget set_base_spe_defense, get_base_spe_defense
+export var base_hp : int setget set_base_hp, get_base_hp
+export var base_speed : int setget set_base_speed, get_base_speed
 
 var level : int setget set_level, get_level
-var types : Array setget set_types, get_types
-
+export(Array, preload("res://project/auto_load/types_info.gd").types) var types = [0,0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
-func _init(_base_attack, _base_defense, _base_spe_attack, _base_spe_defense, _base_hp, _base_speed, _types):
-	set_base_attack(_base_attack)
-	set_base_defense(_base_defense)
-	set_base_spe_attack(_base_spe_attack)
-	set_base_spe_defense(_base_spe_defense)
-	set_base_hp(_base_hp)
-	set_base_speed(_base_speed)
-	set_types(_types)
+func init(_hidden_attack, _hidden_defense, _hidden_spe_attack, _hidden_spe_defense, _hidden_hp, _hidden_speed, _level):
+	set_hidden_attack(_hidden_attack)
+	set_hidden_defense(_hidden_defense)
+	set_hidden_spe_attack(_hidden_spe_attack)
+	set_hidden_spe_defense(_hidden_spe_defense)
+	set_hidden_hp(_hidden_hp)
+	set_hidden_speed(_hidden_speed)
+	set_level(_level)
+	visible = false
+	
 	""" Setget Functions """
 	
 func set_hidden_attack(_hidden_attack) -> void:
@@ -125,9 +126,9 @@ func set_level(_level) -> void:
 func get_level() -> int:
 	return level
 	
-
-func set_types(_types : Array) -> void:
-	types = _types
-	
-func get_types() -> Array:
-	return types
+#
+#func set_types(_types : Array) -> void:
+#	types = _types
+#
+#func get_types() -> Array:
+#	return types

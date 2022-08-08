@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Player",
+"language": "GDScript",
+"path": "res://project/player/player.gd"
+}, {
 "base": "Sprite",
 "class": "Pokemon",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://project/tile_grid/tile_grid.gd"
 } ]
 _global_script_class_icons={
+"Player": "",
 "Pokemon": "",
 "TileCell": "",
 "TileGrid": ""

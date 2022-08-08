@@ -1,7 +1,7 @@
 extends Node
 
 enum terrain_types {GROUND, GRASS, TALLGRASS, SAND, SHORE, WATER}
-enum types {WATER, GRASS, FIRE, ELEC, ICE, DRAGON, PSY, GROUND, FLY, FIGHT, ROCK, STEEL, DARK, BUG, FAIRY, GHOST, POISON, NORMAL}
+enum types {NORMAL, FIRE, WATER, ELEC, GRASS, ICE, FIGHT, POISON, GROUND, FLY, PSY, BUG, ROCK, GHOST, DRAGON, DARK, STEEL, FAIRY}
 
 #Short names for readability in the efficiency matrix
 const P = 2 #Value for super effective bonus

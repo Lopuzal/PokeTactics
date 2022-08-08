@@ -110,8 +110,6 @@ func get_rect() -> Rect2:
 
 
 func set_unit(_unit: Pokemon) -> void:
-	# Example function for a troop / unit / character.
-	# Replace Node2D with your custom class.
 	unit = _unit
 
 
@@ -135,4 +133,4 @@ func occupied():
 
 func print_cell() -> void:
 	print("TileCell id: ", id, "\nTileCell coordinates: ", coordinates, "\nTileCell center: ", center,
-			"\nTileCell neighbors: ", neighbors, "\nTileCell position: ", position, "\nTileCell rect: ", rect)
+			"\nTileCell neighbors: ", neighbors, "\nTileCell position: ", position, "\nTileCell rect: ", rect, "\nUnit: ", unit)
