@@ -1,6 +1,7 @@
 class_name Pokemon
 extends Sprite
 
+onready var onbattle = false
 
 var hidden_attack : int setget set_hidden_attack, get_hidden_attack
 var hidden_defense : int setget set_hidden_defense, get_hidden_defense
@@ -126,7 +127,16 @@ func set_level(_level) -> void:
 func get_level() -> int:
 	return level
 	
-#
+func enable_onbattle() -> void:
+	onbattle = true
+	
+func disable_onbattle() -> void:
+	onbattle = false
+	
+func is_onbattle() -> bool:
+	return onbattle
+
+
 #func set_types(_types : Array) -> void:
 #	types = _types
 #

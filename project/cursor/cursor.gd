@@ -83,8 +83,6 @@ func _set_hovered_cell(cell: TileCell) -> void:
 func _handle_selection() -> void:
 	_selected_cell = _hovered_cell
 	emit_signal("selected_cell",Map.map_position(_selected_cell.get_coordinates()),_selected_cell)
-	print("selected cell: ", _selected_cell)
-	print(_selected_cell.print_cell())
 
 
 func _handle_cancellation() -> void:
