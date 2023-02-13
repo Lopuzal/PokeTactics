@@ -23,8 +23,6 @@ func onbattle_party_size():
 	return size
 
 
-
-
 func get_pokemon(id):
 	return _pokemons[id]
 
