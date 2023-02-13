@@ -28,6 +28,11 @@ tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
+[node name="UnitSelected" type="TileMap" parent="Overlay"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
 [node name="Selected" type="TileMap" parent="Overlay"]
 format = 1
 

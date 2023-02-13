@@ -57,6 +57,6 @@ func _on_Cursor_selected_cell(coords, cell):
 		if player1.onbattle_party_size() >= onbattle_party_size:
 			current_phase = phases.SELECT_UNIT
 	if current_phase == phases.SELECT_UNIT and cell.occupied():
-		print(cell.get_unit())
+		get_node("Overlay").update_unit_selected(cell.coordinates)
 
 
