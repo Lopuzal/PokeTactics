@@ -8,24 +8,24 @@ enum player_turn {PLAYER1,PLAYER2}
 
 var party_ui
 
-onready var current_phase = phases.PLACE_UNIT
-onready var current_turn = player_turn.PLAYER1
+@onready var current_phase = phases.PLACE_UNIT
+@onready var current_turn = player_turn.PLAYER1
 
 # Declare our instanced child scenes.
-onready var battlemap_scene := load("res://project/battlemap/battlemap.tscn")
-onready var battlemap = battlemap_scene.instance()
-onready var cursor := $Cursor
+@onready var battlemap_scene := load("res://project/battlemap/battlemap.tscn")
+@onready var battlemap = battlemap_scene.instantiate()
+@onready var cursor := $Cursor
 
-onready var player1 = $Player1
-onready var player2 = $Player2
+@onready var player1 = $Player1
+@onready var player2 = $Player2
 
-export var onbattle_party_size : int
+@export var onbattle_party_size : int
 
 func _ready():
 	add_child(battlemap)
 	init([{"Name":"bulbasaur"},{"Name":"charmander"}],[{"Name":"bulbasaur"}])
 	ui_init()
-	party_ui = get_node("Camera/PartyUI")
+	party_ui = get_node("Camera3D/PartyUI")
 	print("Main ready.")
 
 func _process(delta):

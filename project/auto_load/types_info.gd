@@ -9,7 +9,7 @@ const B = 0.5 #Value for not very effective malus
 const N = 1 #Value for normal damage
 const Z = 0 #Value for no damage malus
 
-onready var terrain_codes = {terrain_types.GROUND : 0,
+@onready var terrain_codes = {terrain_types.GROUND : 0,
 terrain_types.GRASS : 1,
 terrain_types.TALLGRASS : 2,
 terrain_types.SAND : 3,
@@ -17,7 +17,7 @@ terrain_types.SHORE : 4,
 terrain_types.WATER : 5}
 
 
-onready var type_codes = {types.NORMAL : 0, 
+@onready var type_codes = {types.NORMAL : 0, 
 types.FIRE: 1 , 
 types.WATER : 2,
 types.ELEC: 3, 
@@ -37,7 +37,7 @@ types.STEEL : 16,
 types.FAIRY : 17}
 
 	
-onready var _efficiency_matrix=[[N,N,N,N,N,N,N,N,N,N,N,N,B,Z,N,N,B,N],
+@onready var _efficiency_matrix=[[N,N,N,N,N,N,N,N,N,N,N,N,B,Z,N,N,B,N],
 								[N,B,B,N,P,P,N,N,N,N,N,P,B,N,B,N,P,N],
 								[N,P,B,N,B,N,N,N,P,N,N,N,P,N,B,N,N,N],
 								[N,N,P,B,B,N,N,N,Z,P,N,N,N,N,B,N,N,N],
@@ -56,7 +56,7 @@ onready var _efficiency_matrix=[[N,N,N,N,N,N,N,N,N,N,N,N,B,Z,N,N,B,N],
 								[N,B,B,B,N,P,N,N,N,N,N,N,P,N,N,N,B,P],
 								[N,B,N,N,N,N,P,B,N,N,N,N,N,N,P,P,B,N]]
 
-onready var _move_cost_matrix= [[1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+@onready var _move_cost_matrix= [[1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 								[1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 								[1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 								[2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2],

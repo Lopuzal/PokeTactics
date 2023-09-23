@@ -1,24 +1,24 @@
 class_name Pokemon
-extends Sprite
+extends Sprite2D
 
-onready var onbattle = false
+@onready var onbattle = false
 
-var hidden_attack : int setget set_hidden_attack, get_hidden_attack
-var hidden_defense : int setget set_hidden_defense, get_hidden_defense
-var hidden_spe_attack : int setget set_hidden_spe_attack, get_hidden_spe_attack
-var hidden_spe_defense : int setget set_hidden_spe_defense, get_hidden_spe_defense
-var hidden_hp : int setget set_hidden_hp, get_hidden_hp
-var hidden_speed : int setget set_hidden_speed, get_hidden_speed
+var hidden_attack : int: get = get_hidden_attack, set = set_hidden_attack
+var hidden_defense : int: get = get_hidden_defense, set = set_hidden_defense
+var hidden_spe_attack : int: get = get_hidden_spe_attack, set = set_hidden_spe_attack
+var hidden_spe_defense : int: get = get_hidden_spe_defense, set = set_hidden_spe_defense
+var hidden_hp : int: get = get_hidden_hp, set = set_hidden_hp
+var hidden_speed : int: get = get_hidden_speed, set = set_hidden_speed
 
-export var base_attack : int setget set_base_attack, get_base_attack
-export var base_defense : int setget set_base_defense, get_base_defense
-export var base_spe_attack : int setget set_base_spe_attack, get_base_spe_attack
-export var base_spe_defense : int setget set_base_spe_defense, get_base_spe_defense
-export var base_hp : int setget set_base_hp, get_base_hp
-export var base_speed : int setget set_base_speed, get_base_speed
+@export var base_attack : int: get = get_base_attack, set = set_base_attack
+@export var base_defense : int: get = get_base_defense, set = set_base_defense
+@export var base_spe_attack : int: get = get_base_spe_attack, set = set_base_spe_attack
+@export var base_spe_defense : int: get = get_base_spe_defense, set = set_base_spe_defense
+@export var base_hp : int: get = get_base_hp, set = set_base_hp
+@export var base_speed : int: get = get_base_speed, set = set_base_speed
 
-var level : int setget set_level, get_level
-export(Array, preload("res://project/auto_load/types_info.gd").types) var types = [0,0]
+var level : int: get = get_level, set = set_level
+@export(Array, preload("res://project/auto_load/types_info.gd").types) var types = [0,0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

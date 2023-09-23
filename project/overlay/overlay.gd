@@ -1,8 +1,8 @@
 extends Node2D
 
 
-onready var hovered = $Hovered
-onready var unit_selected = $UnitSelected
+@onready var hovered = $Hovered
+@onready var unit_selected = $UnitSelected
 
 func _ready():
 	pass # Replace with function body.

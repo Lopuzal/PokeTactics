@@ -60,20 +60,20 @@ format = 1
 [node name="PathRD" type="TileMap" parent="Overlay"]
 format = 1
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera3D" type="Camera2D" parent="."]
 position = Vector2( -128, -75 )
 anchor_mode = 0
 current = true
 zoom = Vector2( 0.5, 0.5 )
 
-[node name="PartyUI" type="VBoxContainer" parent="Camera"]
-margin_left = 39.0
-margin_top = 34.0
-margin_right = 104.0
-margin_bottom = 277.0
+[node name="PartyUI" type="VBoxContainer" parent="Camera3D"]
+offset_left = 39.0
+offset_top = 34.0
+offset_right = 104.0
+offset_bottom = 277.0
 script = ExtResource( 6 )
 
-[connection signal="ui_init" from="." to="Camera/PartyUI" method="_on_Main_ui_init"]
-[connection signal="ui_update" from="." to="Camera/PartyUI" method="_on_Main_ui_update"]
+[connection signal="ui_init" from="." to="Camera3D/PartyUI" method="_on_Main_ui_init"]
+[connection signal="ui_update" from="." to="Camera3D/PartyUI" method="_on_Main_ui_update"]
 [connection signal="hovered_cell" from="Cursor" to="Overlay" method="_on_Cursor_hovered_cell"]
 [connection signal="selected_cell" from="Cursor" to="." method="_on_Cursor_selected_cell"]
